@@ -9,15 +9,27 @@ import SwiftUI
 //import UIKit
 
 struct ContentView: View {
-    @State var inputString:String = ""
+    
+    @State var r:CGFloat = 0.5
+    @State var g:CGFloat = 0.5
+    @State var b:CGFloat = 0.5
+    
     var body: some View {
         ZStack{
             Color(red: 1, green: 1, blue: 0)
-            HStack{
-                MyColorText(title: "R:", color: 0.5)
-                MyColorText(title: "G:", color: 0.5)
-                MyColorText(title: "B:", color: 0.5)
+            VStack{
+                HStack{
+                    MyColorText(title: "R:", color: 0.5)
+                    MyColorText(title: "G:", color: 0.5)
+                    MyColorText(title: "B:", color: 0.5)
+                }
+                Spacer()
+                Slider(value: $r)
+                    .padding(.horizontal, 15.0)
+                Slider(value: $g).padding(.horizontal, 15.0)
+                Slider(value: $b).padding([.leading, .bottom, .trailing], 15.0)
             }
+
         }
     }
 }
