@@ -8,9 +8,12 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State var inputString:String = ""
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        ZStack{
+            Color(CGColor(red: 1, green: 0, blue: 0, alpha: 1))
+            Text("Hello")
+        }
     }
 }
 
