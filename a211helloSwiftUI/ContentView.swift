@@ -16,12 +16,12 @@ struct ContentView: View {
     
     var body: some View {
         ZStack{
-            Color(red: 1, green: 1, blue: 0)
+            Color(UIColor(red: r, green: g, blue: b, alpha: 1))
             VStack{
                 HStack{
-                    MyColorText(title: "R:", color: 0.5)
-                    MyColorText(title: "G:", color: 0.5)
-                    MyColorText(title: "B:", color: 0.5)
+                    MyColorText(title: "R:", color: r)
+                    MyColorText(title: "G:", color: g)
+                    MyColorText(title: "B:", color: b)
                 }
                 Spacer()
                 Slider(value: $r)
@@ -36,7 +36,7 @@ struct ContentView: View {
 
 struct MyColorText: View {
     var title:String
-    var color:Double
+    var color:CGFloat
     var body: some View{
         Text("\(title)\(Int(color * 255))")
     }
