@@ -12,15 +12,21 @@ struct ContentView: View {
     @State var inputString:String = ""
     var body: some View {
         ZStack{
-            Color(UIColor.green.cgColor)
-            MyColorText()
+            Color(red: 1, green: 1, blue: 0)
+            HStack{
+                MyColorText(title: "R:", color: 0.5)
+                MyColorText(title: "G:", color: 0.5)
+                MyColorText(title: "B:", color: 0.5)
+            }
         }
     }
 }
 
 struct MyColorText: View {
+    var title:String
+    var color:Double
     var body: some View{
-        Text("test")
+        Text("\(title)\(Int(color * 255))")
     }
 }
 
